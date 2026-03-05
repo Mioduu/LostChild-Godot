@@ -1,40 +1,38 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var is_frozen = false
+var is_attacking = false
 
 func _physics_process(delta: float) -> void:
-	
-	# EQUIPMENT
+	# EQUIPMENT toggle
 	if Input.is_action_just_pressed("ui_focus_mode") and is_on_floor():
 		is_frozen = !is_frozen
-		
 		if is_frozen:
 			$ItemList.show()
 			$SpriteHolder/AnimatedSprite2D.pause()
 		else:
 			$ItemList.hide()
+			$SpriteHolder/AnimatedSprite2D.offset.y = -220
+			$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.05, 0.05)
 			$SpriteHolder/AnimatedSprite2D.play("Idle")
 	
-	# FREEZING THE FRAME
+	# Game Freeze
 	if is_frozen:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	# Start Animation TODO: ADD RUN, JUMP, HIT ANIMATIONS
-	$SpriteHolder/AnimatedSprite2D.play("Idle")
-		
-	# Gravity
+	
+	# Grawitacja
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Jump input
+	# Skok 
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
-	# Horizontal movement
+	
+	# Movement
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		velocity.x = direction * SPEED
@@ -42,13 +40,30 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * (delta * 7))
 
-	# Animations
-	#if not is_on_floor():
-		#$AnimatedSprite2D.play("Jump")
-	#elif direction != 0:
-		#$AnimatedSprite2D.play("Run")
-	#else:
-		#$AnimatedSprite2D.play("PetalsIdle")
-
+	# Atak
+	if Input.is_action_just_pressed("ui_attack_right") and not is_attacking:
+		attack()
 	
+	# Movement Animacje
+	if not is_attacking:
+		if is_on_floor():
+			if velocity.x != 0:
+				$SpriteHolder/AnimatedSprite2D.play("Run") 
+			else:
+				$SpriteHolder/AnimatedSprite2D.play("Idle")
+				$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.05, 0.05)
+		else:
+			$SpriteHolder/AnimatedSprite2D.play("Jump")
+
 	move_and_slide()
+
+# Funkcja obsługująca atak
+func attack():
+	is_attacking = true
+	$SpriteHolder/AnimatedSprite2D.play("Attack")
+	$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.30, 0.40)
+	
+	await $SpriteHolder/AnimatedSprite2D.animation_finished
+	
+	$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.05, 0.05)
+	is_attacking = false
