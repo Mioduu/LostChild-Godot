@@ -23,14 +23,14 @@
 [ext_resource type="Texture2D" uid="uid://xpf743hvaam2" path="res://Assets/Sprites/Character/Animations/Jump/Petals6.png" id="21_rvlpo"]
 [ext_resource type="Texture2D" uid="uid://baukhu5ve1eu1" path="res://Assets/Sprites/Character/Animations/Jump/Petals7.png" id="22_tdwe4"]
 [ext_resource type="Texture2D" uid="uid://bryijdw1mpwsj" path="res://Assets/Sprites/Character/Animations/Jump/Petals8.png" id="23_2o0ji"]
-[ext_resource type="Texture2D" uid="uid://do1hbyltkxtxi" path="res://Assets/Sprites/Character/Animations/Run/Petals1.png" id="24_t5kn3"]
-[ext_resource type="Texture2D" uid="uid://46bv3loqt5ec" path="res://Assets/Sprites/Character/Animations/Run/Petals2.png" id="25_vx117"]
-[ext_resource type="Texture2D" uid="uid://iash5tnmrqhd" path="res://Assets/Sprites/Character/Animations/Run/Petals3.png" id="26_aogit"]
-[ext_resource type="Texture2D" uid="uid://d3dc3n8ho5gp" path="res://Assets/Sprites/Character/Animations/Run/Petals4.png" id="27_mpxp2"]
-[ext_resource type="Texture2D" uid="uid://c8nf1ux1qsmk4" path="res://Assets/Sprites/Character/Animations/Run/Petals5.png" id="28_7jqrp"]
-[ext_resource type="Texture2D" uid="uid://do2a3h03vqdvn" path="res://Assets/Sprites/Character/Animations/Run/Petals6.png" id="29_jotls"]
-[ext_resource type="Texture2D" uid="uid://bxoxfyht6nf4p" path="res://Assets/Sprites/Character/Animations/Run/Petals7.png" id="30_6kwtd"]
-[ext_resource type="Texture2D" uid="uid://cuxxu0hj71ml7" path="res://Assets/Sprites/Character/Animations/Run/Petals8.png" id="31_i1r2l"]
+[ext_resource type="Texture2D" uid="uid://bhyhncgge7mco" path="res://Assets/Sprites/Character/Animations/Run/Run1.png" id="24_mm0n6"]
+[ext_resource type="Texture2D" uid="uid://p3sp23c02326" path="res://Assets/Sprites/Character/Animations/Run/Run2.png" id="25_1hi8g"]
+[ext_resource type="Texture2D" uid="uid://5bjouf1p70bv" path="res://Assets/Sprites/Character/Animations/Run/Run3.png" id="26_pk5x6"]
+[ext_resource type="Texture2D" uid="uid://mqc6w4o8yfcy" path="res://Assets/Sprites/Character/Animations/Run/Run4.png" id="27_afknt"]
+[ext_resource type="Texture2D" uid="uid://f04se3gecwnb" path="res://Assets/Sprites/Character/Animations/Run/Run5.png" id="28_7tsgo"]
+[ext_resource type="Texture2D" uid="uid://dcpmkl77tgfp2" path="res://Assets/Sprites/Character/Animations/Run/Run6.png" id="29_rvlpo"]
+[ext_resource type="Texture2D" uid="uid://dkbu6alf4kggk" path="res://Assets/Sprites/Character/Animations/Run/Run7.png" id="30_tdwe4"]
+[ext_resource type="Texture2D" uid="uid://blta6c1f7y4iu" path="res://Assets/Sprites/Character/Animations/Run/Run8.png" id="31_2o0ji"]
 [ext_resource type="Texture2D" uid="uid://byvtejaxfruae" path="res://Assets/Sprites/Tilemap/Podłoga2.png" id="47_6kwtd"]
 [ext_resource type="Texture2D" uid="uid://bfyhglybwb623" path="res://Assets/Sprites/Tilemap/Podłoga3.png" id="48_i1r2l"]
 [ext_resource type="Texture2D" uid="uid://b31hpee243af2" path="res://Assets/Sprites/Tilemap/Podłoga4.png" id="49_fbt1s"]
@@ -128,32 +128,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("24_t5kn3")
+"texture": ExtResource("24_mm0n6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_vx117")
+"texture": ExtResource("25_1hi8g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_aogit")
+"texture": ExtResource("26_pk5x6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_mpxp2")
+"texture": ExtResource("27_afknt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_7jqrp")
+"texture": ExtResource("28_7tsgo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_jotls")
+"texture": ExtResource("29_rvlpo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_6kwtd")
+"texture": ExtResource("30_tdwe4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_i1r2l")
+"texture": ExtResource("31_2o0ji")
 }],
-"loop": false,
+"loop": true,
 "name": &"Run",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htm45"]
@@ -242,10 +242,11 @@ shape = SubResource("CapsuleShape2D_udk38")
 [node name="SpriteHolder" type="Node2D" parent="Player" unique_id=802192593]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/SpriteHolder" unique_id=1660526016]
-position = Vector2(-18.000002, 140.99998)
+position = Vector2(-33, 126.99999)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_7tsgo")
 animation = &"Run"
+offset = Vector2(0, 270)
 
 [node name="Camera2D" type="Camera2D" parent="Player/SpriteHolder" unique_id=950033774]
 position = Vector2(-20.000004, 166.00002)

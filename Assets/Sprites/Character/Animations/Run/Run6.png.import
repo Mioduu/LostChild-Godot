@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3dc3n8ho5gp"
-path="res://.godot/imported/Petals4.png-1bb54ee5d7ec9adfd2f6a72d600832c1.ctex"
+uid="uid://dcpmkl77tgfp2"
+path="res://.godot/imported/Run6.png-ca479aad8c0535222558598423439d9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Character/Animations/Run/Petals4.png"
-dest_files=["res://.godot/imported/Petals4.png-1bb54ee5d7ec9adfd2f6a72d600832c1.ctex"]
+source_file="res://Assets/Sprites/Character/Animations/Run/Run6.png"
+dest_files=["res://.godot/imported/Run6.png-ca479aad8c0535222558598423439d9f.ctex"]
 
 [params]
 
