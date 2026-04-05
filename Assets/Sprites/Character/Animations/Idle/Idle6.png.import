@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq5b6vyq82tnq"
-path="res://.godot/imported/Petals3.png-824eaa770f3733625f7d7b87b9df21a4.ctex"
+uid="uid://ktfpgv2cp2vr"
+path="res://.godot/imported/Idle6.png-e4ba1083d814b98e5b58ac318f476d8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Character/Animations/Idle/Petals3.png"
-dest_files=["res://.godot/imported/Petals3.png-824eaa770f3733625f7d7b87b9df21a4.ctex"]
+source_file="res://Assets/Sprites/Character/Animations/Idle/Idle6.png"
+dest_files=["res://.godot/imported/Idle6.png-e4ba1083d814b98e5b58ac318f476d8d.ctex"]
 
 [params]
 

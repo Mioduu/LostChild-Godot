@@ -5,6 +5,8 @@ const JUMP_VELOCITY = -400.0
 var is_frozen = false
 var is_attacking = false
 
+## TODO: Start creating the map (soon I hope)
+
 func _physics_process(delta: float) -> void:
 	# Reduces brightness to stop it from triggering bloom
 	$SpriteHolder/AnimatedSprite2D.modulate = Color(0.8, 0.8, 0.8, 1.0)	
@@ -16,7 +18,6 @@ func _physics_process(delta: float) -> void:
 			$SpriteHolder/AnimatedSprite2D.pause()
 		else:
 			$ItemList.hide()
-			$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.05, 0.05)
 			$SpriteHolder/AnimatedSprite2D.play("Idle")
 	
 	# Game Freeze
@@ -48,15 +49,15 @@ func _physics_process(delta: float) -> void:
 	# Movement Animacje
 	if not is_attacking:
 		if is_on_floor():
-			if velocity.x != 0:
-				$SpriteHolder/AnimatedSprite2D.play("Run")
-				$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.043, 0.041)
-			else:
+			if abs(velocity.x) < 0.1:
 				$SpriteHolder/AnimatedSprite2D.play("Idle")
-				$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.05, 0.049)
+			else:
+				$SpriteHolder/AnimatedSprite2D.play("Run")
 		else:
-			$SpriteHolder/AnimatedSprite2D.play("Jump")
-
+			if abs(velocity.x) < 0.1:
+				$SpriteHolder/AnimatedSprite2D.play("Idle")
+			else:
+				$SpriteHolder/AnimatedSprite2D.play("Jump")
 	move_and_slide()
 
 # Funkcja obsługująca atak
@@ -64,11 +65,9 @@ func attack():
 	is_attacking = true
 	$SpriteHolder/AnimatedSprite2D.play("Attack")
 	$SpriteHolder/AnimatedSprite2D.offset.y = 0
-	$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.35, 0.40)
 	
 	await $SpriteHolder/AnimatedSprite2D.animation_finished
 	
-	$SpriteHolder/AnimatedSprite2D.scale = Vector2(0.05, 0.05)
 	$SpriteHolder/AnimatedSprite2D.offset.y = 270
 	is_attacking = false
 	
