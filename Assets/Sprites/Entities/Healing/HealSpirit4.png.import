@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://psrarqevtelr"
-path="res://.godot/imported/FullHealthBar.png-dfd29aa42225c003af901099966a3507.ctex"
+uid="uid://bxe5nds6ghop7"
+path="res://.godot/imported/HealSpirit4.png-fe1e739e36cd84955f738288f410d551.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Character/UI/HealthBar/FullHealthBar.png"
-dest_files=["res://.godot/imported/FullHealthBar.png-dfd29aa42225c003af901099966a3507.ctex"]
+source_file="res://Assets/Sprites/Entities/Healing/HealSpirit4.png"
+dest_files=["res://.godot/imported/HealSpirit4.png-fe1e739e36cd84955f738288f410d551.ctex"]
 
 [params]
 

@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dqne2r7vuki62" path="res://Assets/Sprites/Tilemap/Podłoga5.png" id="5_65apw"]
 [ext_resource type="Texture2D" uid="uid://bhuwr8fdkjl1s" path="res://Assets/Sprites/Tilemap/Podłoga6.png" id="6_rogj1"]
 [ext_resource type="Texture2D" uid="uid://pgtkloii63sa" path="res://Assets/Sprites/Tilemap/Podłoga7.png" id="7_tgwlk"]
-[ext_resource type="Texture2D" uid="uid://0abfbfpq3bj5" path="res://Assets/Sprites/Character/UI/HealthBar/EmptyHealthBar.png" id="8_80rp1"]
-[ext_resource type="Texture2D" uid="uid://dr17ntnvf1c0c" path="res://Assets/Sprites/Character/UI/HealthBar/FullHealthBar.png" id="9_vas6a"]
+[ext_resource type="Texture2D" uid="uid://q1khx7uhb052" path="res://Assets/Sprites/Character/UI/HealthBar/EmptyHealthBar.png" id="8_80rp1"]
 [ext_resource type="PackedScene" uid="uid://beoppidftdexb" path="res://Assets/GameItems/Healing.tscn" id="10_65apw"]
+[ext_resource type="Texture2D" uid="uid://c3o34rrguspfm" path="res://Assets/Sprites/Character/UI/HealthBar/Progress.png" id="11_tgwlk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbon2"]
 texture = ExtResource("2_jbon2")
@@ -89,7 +89,7 @@ offset_right = 762.0
 offset_bottom = 161.0
 nine_patch_stretch = true
 texture_under = ExtResource("8_80rp1")
-texture_progress = ExtResource("9_vas6a")
+texture_progress = ExtResource("11_tgwlk")
 
 [node name="Area2D" parent="." unique_id=580166649 instance=ExtResource("10_65apw")]
 position = Vector2(820, 19)
