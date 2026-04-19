@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://beoppidftdexb"]
+
+[ext_resource type="Script" uid="uid://ccd6kgk2t8nb6" path="res://Assets/GameItems/healing.gd" id="1_hgp54"]
+[ext_resource type="Texture2D" uid="uid://djoddk52dgqlu" path="res://Assets/Sprites/Entities/Healing/HealSpirit1.png" id="1_ywj5i"]
+[ext_resource type="Texture2D" uid="uid://b41go7jgbhe7i" path="res://Assets/Sprites/Entities/Healing/HealSpirit2.png" id="2_hn5be"]
+[ext_resource type="Texture2D" uid="uid://bcm7ey5st2ne6" path="res://Assets/Sprites/Entities/Healing/HealSpirit3.png" id="3_574yh"]
+[ext_resource type="Texture2D" uid="uid://bu6jmdwdsbd84" path="res://Assets/Sprites/Entities/Healing/HealSpirit6.png" id="4_ug22q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg627"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ywj5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hn5be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_574yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ug22q")
+}],
+"loop": true,
+"name": &"HealthSpiritIdle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjtc6"]
+radius = 38.0
+height = 142.0
+
+[node name="HealOrb" type="Area2D" unique_id=580166649]
+script = ExtResource("1_hgp54")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=510251994]
+position = Vector2(-4.7683716e-07, -1)
+scale = Vector2(0.0679375, 0.0593125)
+sprite_frames = SubResource("SpriteFrames_pg627")
+animation = &"HealthSpiritIdle"
+autoplay = "HealthSpiritIdle"
+frame_progress = 0.5498349
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971840328]
+shape = SubResource("CapsuleShape2D_hjtc6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
