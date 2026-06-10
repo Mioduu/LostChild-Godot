@@ -8,9 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://dqne2r7vuki62" path="res://Assets/Sprites/Tilemap/Podłoga5.png" id="5_65apw"]
 [ext_resource type="Texture2D" uid="uid://bhuwr8fdkjl1s" path="res://Assets/Sprites/Tilemap/Podłoga6.png" id="6_rogj1"]
 [ext_resource type="Texture2D" uid="uid://pgtkloii63sa" path="res://Assets/Sprites/Tilemap/Podłoga7.png" id="7_tgwlk"]
-[ext_resource type="Texture2D" uid="uid://q1khx7uhb052" path="res://Assets/Sprites/Character/UI/HealthBar/EmptyHealthBar.png" id="8_80rp1"]
+[ext_resource type="Texture2D" uid="uid://q1khx7uhb052" path="res://Assets/Sprites/Character/UI/Energy/EmptyEnergyBar.png" id="8_80rp1"]
 [ext_resource type="PackedScene" uid="uid://beoppidftdexb" path="res://Assets/GameItems/Healing.tscn" id="10_65apw"]
-[ext_resource type="Texture2D" uid="uid://c3o34rrguspfm" path="res://Assets/Sprites/Character/UI/HealthBar/Progress.png" id="11_tgwlk"]
+[ext_resource type="Texture2D" uid="uid://c3o34rrguspfm" path="res://Assets/Sprites/Character/UI/Energy/Progress.png" id="11_tgwlk"]
+[ext_resource type="Texture2D" uid="uid://bav2ak6ixykub" path="res://Assets/Sprites/Character/UI/Health/Base/o1.png" id="11_yj4wi"]
+[ext_resource type="Texture2D" uid="uid://bdqhkfx7ltf40" path="res://Assets/Sprites/Character/UI/Health/Fire/s1.png" id="12_dmyn3"]
+[ext_resource type="Texture2D" uid="uid://dog6bkogep6hf" path="res://Assets/Sprites/Character/UI/Health/Base/o2.png" id="12_yj4wi"]
+[ext_resource type="Texture2D" uid="uid://bym5h70nnmam0" path="res://Assets/Sprites/Character/UI/Health/Base/o3.png" id="13_dmyn3"]
+[ext_resource type="Texture2D" uid="uid://pu6ectc5jm5o" path="res://Assets/Sprites/Character/UI/Health/Fire/s2.png" id="13_n8jmv"]
+[ext_resource type="Texture2D" uid="uid://bcvd4hjmq5en4" path="res://Assets/Sprites/Character/UI/Health/Fire/s3.png" id="14_84kvv"]
+[ext_resource type="Texture2D" uid="uid://b8bh3prlde7vp" path="res://Assets/Sprites/Character/UI/Health/Base/o4.png" id="14_n8jmv"]
+[ext_resource type="Texture2D" uid="uid://c3d4o0y7bof2v" path="res://Assets/Sprites/Character/UI/Health/Base/o5.png" id="15_84kvv"]
+[ext_resource type="Texture2D" uid="uid://dnymjgi0r8x7j" path="res://Assets/Sprites/Character/UI/Health/Fire/s4.png" id="15_pke2r"]
+[ext_resource type="Texture2D" uid="uid://cikyrkxgpf6c4" path="res://Assets/Sprites/Character/UI/Health/Fire/s5.png" id="16_juxbq"]
+[ext_resource type="Texture2D" uid="uid://cp6dyvakm2bdx" path="res://Assets/Sprites/Character/UI/Health/Base/o6.png" id="16_pke2r"]
+[ext_resource type="Texture2D" uid="uid://4c2vi3t42qnk" path="res://Assets/Sprites/Character/UI/Health/Fire/s6.png" id="17_g1jnf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbon2"]
 texture = ExtResource("2_jbon2")
@@ -67,6 +79,58 @@ sources/3 = SubResource("TileSetAtlasSource_65apw")
 sources/4 = SubResource("TileSetAtlasSource_rogj1")
 sources/5 = SubResource("TileSetAtlasSource_tgwlk")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1jnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_pke2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_84kvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n8jmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dmyn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yj4wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yj4wi")
+}],
+"loop": true,
+"name": &"candle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juxbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_dmyn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n8jmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_84kvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pke2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_juxbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g1jnf")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
 [node name="Game" type="Node2D" unique_id=88758288]
 script = ExtResource("1_rogj1")
 
@@ -83,13 +147,26 @@ tile_set = SubResource("TileSet_ha1ps")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1015099987]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1703209002]
-offset_left = -112.0
-offset_top = -628.0
-offset_right = 762.0
-offset_bottom = 161.0
+offset_left = 1118.0
+offset_top = -622.0
+offset_right = 1992.0
+offset_bottom = 167.0
 nine_patch_stretch = true
 texture_under = ExtResource("8_80rp1")
 texture_progress = ExtResource("11_tgwlk")
+
+[node name="Candle" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=936589573]
+position = Vector2(263.00003, 52)
+rotation = 1.5707964
+scale = Vector2(0.06587007, 0.10468801)
+sprite_frames = SubResource("SpriteFrames_g1jnf")
+animation = &"candle"
+
+[node name="Flame" type="AnimatedSprite2D" parent="CanvasLayer/Candle" unique_id=2129562301]
+position = Vector2(30.362669, -2130.1387)
+scale = Vector2(0.6115403, 0.3329068)
+sprite_frames = SubResource("SpriteFrames_juxbq")
+animation = &"fire"
 
 [node name="Area2D" parent="." unique_id=580166649 instance=ExtResource("10_65apw")]
 position = Vector2(820, 19)

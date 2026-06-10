@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q1khx7uhb052"
-path="res://.godot/imported/EmptyHealthBar.png-79d6d61ab0198d84c6f0d73a3ca1ad3a.ctex"
+uid="uid://dnymjgi0r8x7j"
+path="res://.godot/imported/s4.png-780910e95c06410bc177d36ba968df6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Character/UI/HealthBar/EmptyHealthBar.png"
-dest_files=["res://.godot/imported/EmptyHealthBar.png-79d6d61ab0198d84c6f0d73a3ca1ad3a.ctex"]
+source_file="res://Assets/Sprites/Character/UI/Health/Fire/s4.png"
+dest_files=["res://.godot/imported/s4.png-780910e95c06410bc177d36ba968df6d.ctex"]
 
 [params]
 
