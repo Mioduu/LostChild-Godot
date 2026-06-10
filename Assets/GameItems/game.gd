@@ -12,7 +12,7 @@ var flame_position = [
 	Vector2(0, 0), # 0 hp
 	Vector2(0, 1000), # 1 hp
 	Vector2(50, 200), # 2 hp
-	Vector2(0, -350), # 3 hp
+	Vector2(50, -500), # 3 hp
 	Vector2(50, -1300), # 4 hp
 	Vector2(50, -2100), # 5 hp
 ]
@@ -45,10 +45,10 @@ func take_damage(amount: int):
 
 func game_over():
 	print("Dedówa")
-	flame.hide()
 	
 
 func _ready():
+	candle.modulate = Color(0.8, 0.8, 0.8, 1.0)
 	candle.frame = 5
 	flame.play("fire")
 	$Area2D.collected.connect(_on_energy_collected) 
@@ -58,7 +58,7 @@ func _ready():
 func _on_energy_collected():
 	var target_value = currentEnergy - 30
 	
-	take_damage(4)
+	take_damage(0)
 	
 	var tween = create_tween()
 	tween.tween_property(
@@ -69,7 +69,13 @@ func _on_energy_collected():
 	)
 	
 	currentEnergy = target_value
-	
+	match hp:
+		0:
+			flame.hide()
+		1:
+			flame.scale = Vector2(0.35, 0.35)
+			
+		
 	await tween.finished
 	update_bar_texture()
 	
